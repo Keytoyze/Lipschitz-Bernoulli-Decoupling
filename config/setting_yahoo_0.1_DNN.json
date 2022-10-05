@@ -1,0 +1,22 @@
+{
+    "train_input_feed": "ultra.input_layer.ClickSimulationFeed",
+    "train_input_hparams": "click_model_json=./config/click_yahoo_0.1.json",
+    "valid_input_feed": "ultra.input_layer.DirectLabelFeed",
+    "valid_input_hparams": "",
+    "test_input_feed": "ultra.input_layer.DirectLabelFeed",
+    "test_input_hparams": "",
+    "ranking_model": "ultra.ranking_model.DNNMulti",
+    "ranking_model_hparams": "",
+    "learning_algorithm": "ultra.learning_algorithm.LBD",
+    "learning_algorithm_hparams": "bernoulli=0.1,grad_penalty=100",
+    "metrics": [
+        "ndcg"
+    ],
+    "metrics_topn": [
+        1,
+        3,
+        5,
+        10
+    ],
+    "objective_metric": "ndcg_10"
+}
